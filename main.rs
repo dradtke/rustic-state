@@ -2,7 +2,10 @@
 
 mod state;
 
-struct Hero { st: ~state::State }
+struct Hero {
+	st: ~state::State
+}
+
 impl Hero {
 	// Create a new Hero.
 	fn new() -> Hero {
