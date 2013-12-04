@@ -1,6 +1,6 @@
 // state/sitting.rs
 
-use super::{State,Res};
+use super::{State,Res,invalid_input};
 use super::eating::Eating;
 
 // Sitting is a bare type with no additional information.
@@ -11,13 +11,13 @@ impl State for Sitting {
 		match input[0] {
 			~"eat" => {
 				if input.len() < 2 {
-					Err(~"no food specified!")
+					Err(~"no food specified")
 				} else {
 					self.eat(input[1])
 				}
 			}
 			~"stare" => self.stare(),
-			_        => Err(~"unknown command")
+			_        => invalid_input()
 		}
 	}
 }

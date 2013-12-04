@@ -38,4 +38,5 @@ fn main() {
 	hero.handle_input(~[~"chew"]);
 	hero.handle_input(~[~"stop"]);
 	hero.handle_input(~[~"stare"]);
+	hero.handle_input(~[~"chew"]);
 }

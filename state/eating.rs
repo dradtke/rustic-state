@@ -1,6 +1,6 @@
 // state/eating.rs
 
-use super::{State,Res};
+use super::{State,Res,invalid_input};
 use super::sitting::Sitting;
 
 // Eating is a state that needs to keep track of which food
@@ -14,7 +14,7 @@ impl State for Eating {
 		match input[0] {
 			~"chew" => self.chew(),
 			~"stop" => self.stop(),
-			_       => Err(~"unknown command")
+			_       => invalid_input()
 		}
 	}
 }
